@@ -19,6 +19,7 @@ public class buku_alamat extends Controller {
     }
 
     public static void save(BukuAlamat bukuAlamat) {
+        System.out.println("Golongan Darah: " + bukuAlamat.namagoldar);
         bukuAlamat.save();
         index();
     }

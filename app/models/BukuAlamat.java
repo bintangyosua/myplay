@@ -10,6 +10,7 @@ public class BukuAlamat extends Model {
 	public String nama;
 	public String notelp;
 	public String alamat;
+
 	@ManyToOne
 	public GolonganDarah namagoldar;
 	
