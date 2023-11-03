@@ -26,4 +26,9 @@ public class Application extends Controller {
         render(objmhs);
     }
 
+    public static void view_buku_alamat() {
+        List daftar = BukuAlamat.findAll();
+        render(daftar);
+    }
+
 }
