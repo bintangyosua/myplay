@@ -1,5 +1,6 @@
 # Application dependencies
 
 require:
-    - play
-    - play -> docviewer
+  - play
+  - play -> docviewer
+  - play -> crud
