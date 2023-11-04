@@ -14,5 +14,13 @@ public class Security extends controllers.Secure.Security {
 
         return boleh;
     }
+
+    public static void onDisconnected() {
+        Application.home();
+    }
+
+    public static void onAuthenticated() {
+        buku_alamat.index();
+    }
     
 }
