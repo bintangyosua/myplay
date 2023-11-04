@@ -16,7 +16,6 @@ public class BukuAlamat extends Model {
 	
 	public String ToString() {
 		return nama;
-		
 	}
 }
 
