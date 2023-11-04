@@ -13,8 +13,11 @@ public class BukuAlamat extends Model {
 
 	@ManyToOne
 	public GolonganDarah namagoldar;
+
+	@ManyToOne
+	public Kabupaten namakabupaten;
 	
-	public String ToString() {
+	public String toString() {
 		return nama;
 	}
 }

@@ -16,7 +16,9 @@ public class buku_alamat extends Controller {
     }
 
     public static void create() {
-        render();
+        List goldars = GolonganDarah.findAll();
+        List kabupatens = Kabupaten.findAll();
+        render(goldars, kabupatens);
     }
 
     public static void save(BukuAlamat bukuAlamat) {
@@ -32,6 +34,8 @@ public class buku_alamat extends Controller {
 
     public static void edit(Long id) {
         BukuAlamat bukuAlamat = BukuAlamat.find("id=?1", id).first();
-        render(bukuAlamat);
+        List goldars = GolonganDarah.findAll();
+        List kabupatens = Kabupaten.findAll();
+        render(bukuAlamat, goldars, kabupatens);
     }
 }

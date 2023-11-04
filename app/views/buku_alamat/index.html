@@ -4,30 +4,34 @@
 <a href="/buku_alamat/create">
   <button type="button" class="btn btn-primary mb-2">Tambah Baru</button>
 </a>
-<table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nama</th>
-      <th scope="col">No Telp.</th>
-      <th scope="col">Alamat</th>
-      <th scope="col">Golongan Darah</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    #{list items:daftar, as:'x'}
-    <tr>
-      <th scope="row">#</th>
-      <td>${x.nama}</td>
-      <td>${x.notelp}</td>
-      <td>${x.alamat}</td>
-      <td>${x.namagoldar}</td>
-      <td>
-        <a href="@{buku_alamat.edit(x.id)}">Edit</a> |
-        <a href="@{buku_alamat.delete(x.id)}">Delete</a>
-      </td>
-    </tr>
-    #{/list}
-  </tbody>
-</table>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nama</th>
+        <th scope="col">No Telp.</th>
+        <th scope="col">Kabupaten</th>
+        <th scope="col">Alamat</th>
+        <th scope="col">Golongan Darah</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      #{list items:daftar, as:'x'}
+      <tr>
+        <th scope="row">#</th>
+        <td>${x.nama}</td>
+        <td>${x.notelp}</td>
+        <td>${x.namakabupaten}</td>
+        <td>${x.alamat}</td>
+        <td>${x.namagoldar}</td>
+        <td>
+          <a href="@{buku_alamat.edit(x.id)}">Edit</a> |
+          <a href="@{buku_alamat.delete(x.id)}">Delete</a>
+        </td>
+      </tr>
+      #{/list}
+    </tbody>
+  </table>
+</div>
