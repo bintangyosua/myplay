@@ -16,5 +16,9 @@ public class User extends Model {
         this.password = password;
         this.fullname = fullname;
     }
+
+    public String toString() {
+        return this.username;
+    }
     
 }
