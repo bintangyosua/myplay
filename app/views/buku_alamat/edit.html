@@ -1,6 +1,6 @@
 #{extends 'layout.html' /} #{set title:'Tambah Alamat' /}
 
-<h1>Edit Alamat milik</h1>
+<h1>Edit Alamat Milik ${bukuAlamat.nama}</h1>
 <form name="bukuAlamat" action="@{buku_alamat.save()}">
   <a href="@{buku_alamat.index()}">Kembali ke view</a>
   <div class="mb-3">
@@ -24,6 +24,24 @@
     <div id="emailHelp" class="form-text">Masukkan nomor telepon utama mu</div>
   </div>
   <div class="mb-3">
+    <label for="kabupaten" class="form-label">Kabupaten</label>
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      name="bukuAlamat.namakabupaten.id"
+      id="kabupaten">
+      #{list items:kabupatens, as:'x'} #{if bukuAlamat.namakabupaten.id == x.id}
+      <option value="${x.id}" selected>${x.namakabupaten}</option>
+      #{/if} #{else}
+      <option value="${x.id}">${x.namakabupaten}</option>
+      #{/else} #{/list}
+    </select>
+    <div id="emailHelp" class="form-text">
+      Dilarang mengisi kabupaten palsu!
+    </div>
+  </div>
+
+  <div class="mb-3">
     <label for="alamat" class="form-label">Alamat</label>
     <textarea
       class="form-control"
@@ -42,23 +60,11 @@ ${bukuAlamat.alamat}</textarea
       aria-label="Default select example"
       name="bukuAlamat.namagoldar.id"
       id="goldar">
-      #{if bukuAlamat.namagoldar.id == 1}
-      <option value="1" selected>A</option>
+      #{list items:goldars, as:'x'} #{if bukuAlamat.namagoldar.id == x.id}
+      <option value="${x.id}" selected>${x.namagoldar}</option>
       #{/if} #{else}
-      <option value="1">A</option>
-      #{/else} #{if bukuAlamat.namagoldar.id == 2}
-      <option value="2" selected>B</option>
-      #{/if} #{else}
-      <option value="2">B</option>
-      #{/else} #{if bukuAlamat.namagoldar.id == 3}
-      <option value="3" selected>AB</option>
-      #{/if} #{else}
-      <option value="3">AB</option>
-      #{/else} #{if bukuAlamat.namagoldar.id == 4}
-      <option value="4" selected>O</option>
-      #{/if} #{else}
-      <option value="4">O</option>
-      #{/else}
+      <option value="${x.id}">${x.namagoldar}</option>
+      #{/else} #{/list}
     </select>
     <div id="emailHelp" class="form-text">Pilih salah satu</div>
     <input type="text" name="bukuAlamat.id" value="${bukuAlamat.id}" hidden />

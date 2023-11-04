@@ -22,5 +22,13 @@ public class Security extends controllers.Secure.Security {
     public static void onAuthenticated() {
         buku_alamat.index();
     }
+
+    public static boolean check(String profile) {
+        if ("admin".equals(profile))  {
+            return User.find("username=?1", connected()).<User>first().isAdmin;
+        }
+
+        return false;
+    }
     
 }
