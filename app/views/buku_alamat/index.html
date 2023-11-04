@@ -24,8 +24,8 @@
       <td>${x.alamat}</td>
       <td>${x.namagoldar}</td>
       <td>
-        <a href="/buku_alamat/edit?id=${x.id}">Edit</a> |
-        <a href="/buku_alamat/delete?id=${x.id}">Delete</a>
+        <a href="@{buku_alamat.edit(x.id)}">Edit</a> |
+        <a href="@{buku_alamat.delete(x.id)}">Delete</a>
       </td>
     </tr>
     #{/list}
