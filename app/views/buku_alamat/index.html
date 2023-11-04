@@ -1,6 +1,6 @@
-#{extends 'layout.html' /} #{set title:'Home' /}
+#{extends 'layout.html' /} #{set title:'Buku Alamat' /}
 
-<h1>Daftar Alamat</h1>
+<h1>Buku Alamat</h1>
 <a href="/buku_alamat/create">
   <button type="button" class="btn btn-primary mb-2">Tambah Baru</button>
 </a>
@@ -24,7 +24,7 @@
       <td>${x.alamat}</td>
       <td>${x.namagoldar}</td>
       <td>
-        <a href="#">Edit</a> |
+        <a href="/buku_alamat/edit?id=${x.id}">Edit</a> |
         <a href="/buku_alamat/delete?id=${x.id}">Delete</a>
       </td>
     </tr>

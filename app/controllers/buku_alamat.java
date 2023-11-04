@@ -19,7 +19,6 @@ public class buku_alamat extends Controller {
     }
 
     public static void save(BukuAlamat bukuAlamat) {
-        System.out.println("Golongan Darah: " + bukuAlamat.namagoldar);
         bukuAlamat.save();
         index();
     }
@@ -28,5 +27,10 @@ public class buku_alamat extends Controller {
         BukuAlamat bukuAlamat = BukuAlamat.findById(id);
         bukuAlamat.delete();
         index();
+    }
+
+    public static void edit(Long id) {
+        BukuAlamat bukuAlamat = BukuAlamat.find("id=?1", id).first();
+        render(bukuAlamat);
     }
 }

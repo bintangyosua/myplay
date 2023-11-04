@@ -1,16 +1,26 @@
 #{extends 'layout.html' /} #{set title:'Tambah Alamat' /}
 
-<h1>Tambah Alamat</h1>
-<a href="@{buku_alamat.index()}">Kembali ke view</a>
+<h1>Edit Alamat milik</h1>
 <form name="bukuAlamat" action="@{buku_alamat.save()}">
+  <a href="@{buku_alamat.index()}">Kembali ke view</a>
   <div class="mb-3">
     <label for="nama" class="form-label">Nama</label>
-    <input type="text" class="form-control" id="nama" name="bukuAlamat.nama" />
+    <input
+      type="text"
+      class="form-control"
+      id="nama"
+      name="bukuAlamat.nama"
+      value="${bukuAlamat.nama}" />
     <div id="emailHelp" class="form-text">Masukkan nama kamu!</div>
   </div>
   <div class="mb-3">
     <label for="nim" class="form-label">No Telp</label>
-    <input type="text" class="form-control" id="nim" name="bukuAlamat.notelp" />
+    <input
+      type="text"
+      class="form-control"
+      id="nim"
+      name="bukuAlamat.notelp"
+      value="${bukuAlamat.notelp}" />
     <div id="emailHelp" class="form-text">Masukkan nomor telepon utama mu</div>
   </div>
   <div class="mb-3">
@@ -20,7 +30,9 @@
       placeholder="Leave a comment here"
       id="alamat"
       name="bukuAlamat.alamat"
-      style="height: 100px"></textarea>
+      style="height: 100px">
+${bukuAlamat.alamat}</textarea
+    >
     <div id="emailHelp" class="form-text">Dilarang mengisi alamat palsu!</div>
   </div>
   <div class="mb-3">
@@ -30,10 +42,18 @@
       aria-label="Default select example"
       name="bukuAlamat.namagoldar.id"
       id="goldar">
+      #{if bukuAlamat.namagoldar.id == 1}
+      <option value="1" selected>Laki-laki</option>
+      #{/if} #{else}
       <option value="1">Laki-laki</option>
+      #{/else} #{if bukuAlamat.namagoldar.id == 2}
+      <option value="2" selected>Perempuan</option>
+      #{/if} #{else}
       <option value="2">Perempuan</option>
+      #{/else}
     </select>
     <div id="emailHelp" class="form-text">Pilih salah satu</div>
+    <input type="text" name="bukuAlamat.id" value="${bukuAlamat.id}" hidden />
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
