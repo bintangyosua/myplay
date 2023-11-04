@@ -31,18 +31,23 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <!-- <a
-              class="nav-link active"
-              aria-current="page"
-              href="/buku_alamat/index"
-              >Daftar Alamat</a
-            > -->
-            <a class="nav-link" href="@{buku_alamat.index()}">Daftar Alamat</a>
-            <a class="nav-link" href="@{Application.index()}">Play Docs</a>
-            <a class="nav-link disabled" aria-disabled="true"
-              >Prohibited Item</a
-            >
+          <div
+            class="navbar-nav"
+            style="display: flex; justify-content: space-between; width: 100%">
+            <div class="navbar-nav">
+              <a class="nav-link" href="@{buku_alamat.index()}"
+                >Daftar Alamat</a
+              >
+              <a class="nav-link" href="@{Application.index()}">Play Docs</a>
+              <a class="nav-link" href="/admin">Admin</a>
+            </div>
+            <div class="d-flex" role="search">
+              <a href="@{Secure.login()}">
+                <button type="button" class="btn btn-success">Log In</button></a
+              ><a href="@{Secure.logout()}" style="margin-left: 10px">
+                <button type="button" class="btn btn-danger">Log Out</button></a
+              >
+            </div>
           </div>
         </div>
       </div>
