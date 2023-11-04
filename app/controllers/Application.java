@@ -14,11 +14,17 @@ public class Application extends Controller {
     }
 
     public static void home() {
-        render();
-    }
+        String username = Security.session.get("username");
+        User user = User.find("username=?1", username).first();
 
-    public static void test() {
-        render();
+        if (user == null) {
+            String name = "";
+            render(name);
+        } else {
+            String name = " " + user.fullname;
+            render(name);
+        }
+
     }
 
     public static void newMahasiswa() {
@@ -30,9 +36,13 @@ public class Application extends Controller {
         render(objmhs);
     }
 
-    public static void view_buku_alamat() {
-        List daftar = BukuAlamat.findAll();
-        render(daftar);
+    public static void signup() {
+        render();
+    }
+
+    public static void signedup(User user) {
+        user.save();
+        buku_alamat.index();
     }
 
 }

@@ -2,7 +2,10 @@
 
 <!-- Hero -->
 <div class="jumbotron">
-  <h1 class="display-4">Halo, semoga harimu menyenangkan</h1>
+  <h1 class="display-4">
+    #{if name != ""} Halo ${name}, #{/if}#{else} Halo, #{/else} semoga harimu
+    menyenangkan
+  </h1>
   <p class="lead">
     Ini merupakan website untuk mencatat alamat-alamat dalam bentuk digital.
   </p>
