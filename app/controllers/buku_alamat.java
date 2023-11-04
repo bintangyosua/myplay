@@ -7,6 +7,7 @@ import java.util.*;
 
 import models.*;
 
+@With(Secure.class)
 public class buku_alamat extends Controller {
 
     public static void index() {
