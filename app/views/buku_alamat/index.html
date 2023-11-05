@@ -18,9 +18,9 @@
       </tr>
     </thead>
     <tbody>
-      #{list items:daftar, as:'x'}
+      %{ int counter = 1; }% #{list items:daftar, as:'x'}
       <tr>
-        <th scope="row">#</th>
+        <th scope="row">${counter++}</th>
         <td>${x.nama}</td>
         <td>${x.notelp}</td>
         <td>${x.namakabupaten}</td>
