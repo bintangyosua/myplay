@@ -1,0 +1,412 @@
+/** Administration area **/
+
+#crud {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica", "Arial", "Sans";
+  font-size: 90%;
+  color: #111;
+}
+
+/** Header **/
+
+#crud #crudHeader {
+  background: #1b262c;
+  padding: 12px 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#crud #crudHeader h2 {
+  margin: 0;
+  font-weight: normal;
+}
+
+#crud #crudHeader h2 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#crud #crudHeader a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/** Breadcrumb **/
+
+#crudBreadcrumb {
+  padding: 15px 20px;
+  font-size: 17px;
+  border-bottom: 1px solid #ddd;
+}
+
+#crudBreadcrumb ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#crudBreadcrumb li {
+  display: inline;
+}
+
+#crudBreadcrumb a {
+  color: #333;
+}
+
+#crudBreadcrumb li:last-child a {
+  color: #888;
+  text-decoration: none;
+}
+
+/** Flash message **/
+
+.crudFlash {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  margin: 0 20px;
+  color: #fff;
+  font-size: 17px;
+}
+
+.flashError {
+  background: #c00;
+}
+
+.flashSuccess {
+  background: #54bd06;
+}
+
+/** Content **/
+
+#crud #crudContent {
+  padding: 10px 20px;
+}
+
+#crud #crudContent h2 {
+  color: #333;
+  font-weight: normal;
+  margin-top: 10px;
+}
+
+#crud #crudContent a {
+  color: #444;
+}
+
+/** Tables **/
+
+#crud #crudContent table {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+table {
+  font-size: 18px;
+}
+
+#crud #crudContent table thead tr {
+  background: #0f4c75;
+}
+
+#crud #crudContent table th {
+  color: #fff;
+  font-weight: bold;
+}
+
+#crud #crudContent table th a {
+  color: #fff;
+  font-weight: bold;
+}
+
+#crud #crudContent table th {
+  text-align: center;
+  padding: 15px;
+}
+
+#crud #crudContent table td {
+  text-align: left;
+  padding: 10px;
+}
+
+#crud #crudContent table td {
+  border-bottom: 1px solid #eee;
+}
+
+#crud #crudContent table tr.even {
+  background: #f9f9f9;
+}
+
+#crud #crudContent table tr:last-child td {
+  border-bottom: 1px solid #ddd;
+}
+
+.crudSortedAsc:after {
+  content: "▼";
+}
+
+.crudSortedDesc:after {
+  content: "▲";
+}
+
+/** Forms **/
+
+form {
+  margin: 0;
+}
+
+input,
+textarea,
+select {
+  font-family: "Helvetica", "Arial", "Sans";
+  font-size: 12px;
+}
+
+textarea {
+  padding: 2px;
+}
+
+.objectForm {
+  border: 1px solid #ddd;
+  font-size: 17px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  width: 20%;
+  float: left;
+  color: #666;
+  cursor: pointer;
+}
+
+.crudField {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.crudField > label {
+  font-size: 19px;
+}
+
+.crudField > * {
+  font-size: 17px;
+  padding: 5px;
+}
+
+.crud_hidden {
+  display: none;
+}
+
+.crudButtons {
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+}
+
+.crudButtons > input[type="submit"] {
+  padding: 10px 15px;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #364f6b;
+  cursor: pointer;
+  color: white;
+}
+
+.crudButtons > input[type="submit"]:hover {
+  background-color: #25456c;
+}
+
+.crudField .error {
+  color: #c00;
+  padding-left: 10px;
+  position: absolute;
+  top: 15px;
+  font-size: 80%;
+}
+
+.crudField .hasError {
+  color: #c00;
+}
+
+.crudField select[multiple] {
+  max-height: 100px;
+}
+
+.crudField .crudHelp {
+  font-size: 70%;
+  color: #888;
+  display: block;
+  margin-left: 20%;
+  margin-top: 5px;
+}
+
+form .currentAttachment {
+  display: block;
+  font-size: 80%;
+  margin-left: 20%;
+  padding-top: 4px;
+}
+
+form .removeAttachment {
+  display: block;
+  font-size: 80%;
+  margin-left: 20%;
+}
+
+/** Footer **/
+
+#crud #crudFooter {
+  font-size: 80%;
+  color: #aaa;
+  padding: 10px 20px;
+  border-top: 1px dashed #ccc;
+  border-bottom: 1px dashed #ccc;
+  margin-top: 20px;
+}
+
+#crud #crudFooter a {
+  color: #333;
+}
+
+/** Home **/
+
+.crudNew {
+  text-align: right !important;
+}
+
+.crudNew a {
+  background: #198754;
+  padding: 10px 15px;
+  font-size: 100%;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.crudNew a:hover {
+  background: #157347;
+}
+
+/** List **/
+
+#crudList {
+  position: relative;
+}
+
+#crudListAdd a {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #3282b8;
+  padding: 10px 15px;
+  font-size: 15px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  color: #fff !important;
+  text-decoration: none;
+}
+
+#crudListAdd a:hover {
+  background: #166da8;
+}
+
+#crudListSearch {
+  padding: 5px 0;
+}
+
+#crudListSearch > form {
+  display: flex;
+  justify-content: start;
+}
+
+#crudListSearch input[type="text"] {
+  width: 40%;
+  padding: 5px;
+  font-size: 120%;
+  margin-right: 5px;
+}
+
+#crudListSearch > * {
+  font-size: 17px;
+}
+
+#crudListSearch input[type="submit"] {
+  background: #3282b8;
+  color: white;
+  border: 0;
+  font-size: 100%;
+  margin-right: 5px;
+  border-radius: 10px;
+  display: block;
+  padding: 12px 15px;
+}
+
+#crudListSearch form {
+  display: flex;
+  align-items: center;
+}
+
+#crudListSearch input[type="submit"]:hover {
+  background: #166da8;
+  cursor: pointer;
+}
+
+#crudListSearch a {
+  color: #111 !important;
+  font-size: 100%;
+}
+
+#crudListPagination {
+  padding: 4px 5px;
+  border: 1px solid #ddd;
+  background: #efefef;
+  border-top: 0;
+  font-size: 90%;
+  position: relative;
+}
+
+#crudListPagination .crudCount {
+  margin: 5px 0;
+  font-size: 17px;
+  text-align: center;
+}
+
+#crudListPagination .crudPages {
+  margin: 0;
+  position: absolute;
+  right: 5px;
+  top: 4px;
+}
+
+/** Show **/
+
+#crudShow {
+  position: relative;
+}
+
+.crudDelete input {
+  color: #fff;
+  border: none;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #dc3545;
+  padding: 10px;
+  font-size: 100%;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  cursor: pointer;
+}
+
+.crudDelete input:hover {
+  opacity: 1;
+  background: #bb2d3b;
+}

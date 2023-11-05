@@ -29,7 +29,8 @@
       class="form-select"
       aria-label="Default select example"
       name="orang.namakabupaten.id"
-      id="kabupaten">
+      id="kabupaten"
+      required>
       #{list items:kabupatens, as:'x'}
       <option value="${x.id}">${x.namakabupaten}</option>
       #{/list}
@@ -45,7 +46,8 @@
       placeholder="Leave a comment here"
       id="alamat"
       name="orang.alamat"
-      style="height: 100px"></textarea>
+      style="height: 100px"
+      required></textarea>
     <div id="emailHelp" class="form-text">Dilarang mengisi alamat palsu!</div>
   </div>
   <div class="mb-3">
@@ -54,7 +56,8 @@
       class="form-select"
       aria-label="Default select example"
       name="orang.namagoldar.id"
-      id="goldar">
+      id="goldar"
+      required>
       #{list items:goldars, as:'x'}
       <option value="${x.id}">${x.namagoldar}</option>
       #{/list}

@@ -10,7 +10,8 @@
       class="form-control"
       id="nama"
       name="orang.nama"
-      value="${orang.nama}" />
+      value="${orang.nama}"
+      required />
     <div id="emailHelp" class="form-text">Masukkan nama kamu!</div>
   </div>
   <div class="mb-3">
@@ -20,7 +21,8 @@
       class="form-control"
       id="nim"
       name="orang.notelp"
-      value="${orang.notelp}" />
+      value="${orang.notelp}"
+      required />
     <div id="emailHelp" class="form-text">Masukkan nomor telepon utama mu</div>
   </div>
   <div class="mb-3">
@@ -29,7 +31,8 @@
       class="form-select"
       aria-label="Default select example"
       name="orang.namakabupaten.id"
-      id="kabupaten">
+      id="kabupaten"
+      required>
       #{list items:kabupatens, as:'x'} #{if orang.namakabupaten.id == x.id}
       <option value="${x.id}" selected>${x.namakabupaten}</option>
       #{/if} #{else}
@@ -48,7 +51,8 @@
       placeholder="Leave a comment here"
       id="alamat"
       name="orang.alamat"
-      style="height: 100px">
+      style="height: 100px"
+      required>
 ${orang.alamat}</textarea
     >
     <div id="emailHelp" class="form-text">Dilarang mengisi alamat palsu!</div>
@@ -59,7 +63,8 @@ ${orang.alamat}</textarea
       class="form-select"
       aria-label="Default select example"
       name="orang.namagoldar.id"
-      id="goldar">
+      id="goldar"
+      required>
       #{list items:goldars, as:'x'} #{if orang.namagoldar.id == x.id}
       <option value="${x.id}" selected>${x.namagoldar}</option>
       #{/if} #{else}
