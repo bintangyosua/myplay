@@ -20,7 +20,7 @@ public class Security extends controllers.Secure.Security {
     }
 
     public static void onAuthenticated() {
-        buku_alamat.index();
+        OrangApplication.index();
     }
 
     public static boolean check(String profile) {

@@ -20,5 +20,5 @@ public class Orang extends Model {
 	public String toString() {
 		return nama;
 	}
-    
+
 }

@@ -1,16 +1,26 @@
-#{extends 'layout.html' /} #{set title:'Tambah Alamat' /}
+#{extends 'layout.html' /} #{set title:'Edit Orang' /}
 
-<h1>Tambah Alamat</h1>
-<a href="@{buku_alamat.index()}">Kembali ke view</a>
-<form name="bukuAlamat" action="@{buku_alamat.save()}">
+<h1>Edit Orang Milik ${orang.nama}</h1>
+<form name="orang" action="@{OrangApplication.save()}" method="POST">
+  <a href="@{OrangApplication.index()}">Kembali ke view</a>
   <div class="mb-3">
     <label for="nama" class="form-label">Nama</label>
-    <input type="text" class="form-control" id="nama" name="bukuAlamat.nama" />
+    <input
+      type="text"
+      class="form-control"
+      id="nama"
+      name="orang.nama"
+      value="${orang.nama}" />
     <div id="emailHelp" class="form-text">Masukkan nama kamu!</div>
   </div>
   <div class="mb-3">
     <label for="nim" class="form-label">No Telp</label>
-    <input type="text" class="form-control" id="nim" name="bukuAlamat.notelp" />
+    <input
+      type="text"
+      class="form-control"
+      id="nim"
+      name="orang.notelp"
+      value="${orang.notelp}" />
     <div id="emailHelp" class="form-text">Masukkan nomor telepon utama mu</div>
   </div>
   <div class="mb-3">
@@ -18,24 +28,29 @@
     <select
       class="form-select"
       aria-label="Default select example"
-      name="bukuAlamat.namakabupaten.id"
+      name="orang.namakabupaten.id"
       id="kabupaten">
-      #{list items:kabupatens, as:'x'}
+      #{list items:kabupatens, as:'x'} #{if orang.namakabupaten.id == x.id}
+      <option value="${x.id}" selected>${x.namakabupaten}</option>
+      #{/if} #{else}
       <option value="${x.id}">${x.namakabupaten}</option>
-      #{/list}
+      #{/else} #{/list}
     </select>
     <div id="emailHelp" class="form-text">
       Dilarang mengisi kabupaten palsu!
     </div>
   </div>
+
   <div class="mb-3">
     <label for="alamat" class="form-label">Alamat</label>
     <textarea
       class="form-control"
       placeholder="Leave a comment here"
       id="alamat"
-      name="bukuAlamat.alamat"
-      style="height: 100px"></textarea>
+      name="orang.alamat"
+      style="height: 100px">
+${orang.alamat}</textarea
+    >
     <div id="emailHelp" class="form-text">Dilarang mengisi alamat palsu!</div>
   </div>
   <div class="mb-3">
@@ -43,13 +58,16 @@
     <select
       class="form-select"
       aria-label="Default select example"
-      name="bukuAlamat.namagoldar.id"
+      name="orang.namagoldar.id"
       id="goldar">
-      #{list items:goldars, as:'x'}
+      #{list items:goldars, as:'x'} #{if orang.namagoldar.id == x.id}
+      <option value="${x.id}" selected>${x.namagoldar}</option>
+      #{/if} #{else}
       <option value="${x.id}">${x.namagoldar}</option>
-      #{/list}
+      #{/else} #{/list}
     </select>
     <div id="emailHelp" class="form-text">Pilih salah satu</div>
+    <input type="text" name="orang.id" value="${orang.id}" hidden />
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
