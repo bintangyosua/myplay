@@ -17,14 +17,16 @@
   justify-content: space-between;
 }
 
-#crud #crudHeader h2 {
+#crud #crudHeader h1 {
   margin: 0;
   font-weight: normal;
 }
 
-#crud #crudHeader h2 a {
-  color: #fff;
-  text-decoration: none;
+#crud #crudHeader h5 {
+  margin: 0;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
 }
 
 #crud #crudHeader a {
