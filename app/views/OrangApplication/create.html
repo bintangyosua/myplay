@@ -1,0 +1,68 @@
+#{extends 'layout.html' /} #{set title:'Tambah Orang' /}
+
+<h1>Tambah Orang</h1>
+<a href="@{OrangApplication.index()}">Kembali ke view</a>
+<form name="orang" action="@{OrangApplication.save()}" method="POST">
+  <div class="mb-3">
+    <label for="nama" class="form-label">Nama</label>
+    <input
+      type="text"
+      class="form-control"
+      id="nama"
+      name="orang.nama"
+      required />
+    <div id="emailHelp" class="form-text">Masukkan nama kamu!</div>
+  </div>
+  <div class="mb-3">
+    <label for="nim" class="form-label">No Telp</label>
+    <input
+      type="text"
+      class="form-control"
+      id="nim"
+      name="orang.notelp"
+      required />
+    <div id="emailHelp" class="form-text">Masukkan nomor telepon utama mu</div>
+  </div>
+  <div class="mb-3">
+    <label for="kabupaten" class="form-label">Kabupaten</label>
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      name="orang.namakabupaten.id"
+      id="kabupaten"
+      required>
+      #{list items:kabupatens, as:'x'}
+      <option value="${x.id}">${x.namakabupaten}</option>
+      #{/list}
+    </select>
+    <div id="emailHelp" class="form-text">
+      Dilarang mengisi kabupaten palsu!
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="alamat" class="form-label">Alamat</label>
+    <textarea
+      class="form-control"
+      placeholder="Leave a comment here"
+      id="alamat"
+      name="orang.alamat"
+      style="height: 100px"
+      required></textarea>
+    <div id="emailHelp" class="form-text">Dilarang mengisi alamat palsu!</div>
+  </div>
+  <div class="mb-3">
+    <label for="goldar" class="form-label">Golongan Darah</label>
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      name="orang.namagoldar.id"
+      id="goldar"
+      required>
+      #{list items:goldars, as:'x'}
+      <option value="${x.id}">${x.namagoldar}</option>
+      #{/list}
+    </select>
+    <div id="emailHelp" class="form-text">Pilih salah satu</div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

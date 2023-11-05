@@ -1,0 +1,78 @@
+#{extends 'layout.html' /} #{set title:'Edit Orang' /}
+
+<h1>Edit Orang Milik ${orang.nama}</h1>
+<form name="orang" action="@{OrangApplication.save()}" method="POST">
+  <a href="@{OrangApplication.index()}">Kembali ke view</a>
+  <div class="mb-3">
+    <label for="nama" class="form-label">Nama</label>
+    <input
+      type="text"
+      class="form-control"
+      id="nama"
+      name="orang.nama"
+      value="${orang.nama}"
+      required />
+    <div id="emailHelp" class="form-text">Masukkan nama kamu!</div>
+  </div>
+  <div class="mb-3">
+    <label for="nim" class="form-label">No Telp</label>
+    <input
+      type="text"
+      class="form-control"
+      id="nim"
+      name="orang.notelp"
+      value="${orang.notelp}"
+      required />
+    <div id="emailHelp" class="form-text">Masukkan nomor telepon utama mu</div>
+  </div>
+  <div class="mb-3">
+    <label for="kabupaten" class="form-label">Kabupaten</label>
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      name="orang.namakabupaten.id"
+      id="kabupaten"
+      required>
+      #{list items:kabupatens, as:'x'} #{if orang.namakabupaten.id == x.id}
+      <option value="${x.id}" selected>${x.namakabupaten}</option>
+      #{/if} #{else}
+      <option value="${x.id}">${x.namakabupaten}</option>
+      #{/else} #{/list}
+    </select>
+    <div id="emailHelp" class="form-text">
+      Dilarang mengisi kabupaten palsu!
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="alamat" class="form-label">Alamat</label>
+    <textarea
+      class="form-control"
+      placeholder="Leave a comment here"
+      id="alamat"
+      name="orang.alamat"
+      style="height: 100px"
+      required>
+${orang.alamat}</textarea
+    >
+    <div id="emailHelp" class="form-text">Dilarang mengisi alamat palsu!</div>
+  </div>
+  <div class="mb-3">
+    <label for="goldar" class="form-label">Golongan Darah</label>
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      name="orang.namagoldar.id"
+      id="goldar"
+      required>
+      #{list items:goldars, as:'x'} #{if orang.namagoldar.id == x.id}
+      <option value="${x.id}" selected>${x.namagoldar}</option>
+      #{/if} #{else}
+      <option value="${x.id}">${x.namagoldar}</option>
+      #{/else} #{/list}
+    </select>
+    <div id="emailHelp" class="form-text">Pilih salah satu</div>
+    <input type="text" name="orang.id" value="${orang.id}" hidden />
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

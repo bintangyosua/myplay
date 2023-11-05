@@ -27,22 +27,13 @@ public class Application extends Controller {
 
     }
 
-    public static void newMahasiswa() {
-        render();
-    }
-
-    public static void buatBaru(Mahasiswa objmhs) {
-        objmhs.nama = objmhs.nama + " ganteng sekali";
-        render(objmhs);
-    }
-
     public static void signup() {
         render();
     }
 
     public static void signedup(User user) {
         user.save();
-        buku_alamat.index();
+        OrangApplication.index();
     }
 
 }
