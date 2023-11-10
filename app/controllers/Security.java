@@ -20,7 +20,7 @@ public class Security extends controllers.Secure.Security {
     }
 
     public static void onAuthenticated() {
-        OrangApplication.index();
+        KaryaApplication.index();
     }
 
     public static boolean check(String profile) {
@@ -29,6 +29,11 @@ public class Security extends controllers.Secure.Security {
         }
 
         return false;
+    }
+
+    public static String dapatkanNama() {
+        String username = Security.session.get("username");
+        return User.find("username=?1", username).<User>first().fullname;
     }
     
 }

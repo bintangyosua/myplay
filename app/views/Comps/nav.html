@@ -20,7 +20,6 @@
         class="navbar-nav"
         style="display: flex; justify-content: space-between; width: 100%">
         <div class="navbar-nav">
-          <a class="nav-link" href="@{OrangApplication.index()}">Orang</a>
           <a class="nav-link" href="@{KaryaApplication.index()}">Karya</a>
           <a class="nav-link" href="@{Application.index()}">Play Docs</a>
           #{secure.check 'admin'}
@@ -36,6 +35,9 @@
             <button type="button" class="btn btn-success">Sign Up</button></a
           >
           #{/if} #{else}
+          <h3 style="color: white; margin-right: 20px">
+            ${controllers.Security.dapatkanNama()}
+          </h3>
           <a href="@{Secure.logout()}">
             <button type="button" class="btn btn-danger">Log Out</button></a
           >
