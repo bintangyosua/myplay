@@ -11,7 +11,6 @@ import play.db.jpa.GenericModel.JPAQuery;
 import play.mvc.Controller;
 import play.mvc.With;
 
-@With(Secure.class)
 public class KaryaApplication extends Controller {
     public static void index() {
         List<Karya> karyas = Karya.findAll();
@@ -19,6 +18,7 @@ public class KaryaApplication extends Controller {
     }
 
     public static void create() {
+        if (!Security.isLoggedIn()) Application.signup();
         List<JPABase> genres = Genre.findAll();
         User user = User.find("username=?1", Security.connected()).first();
         render(genres, user);
