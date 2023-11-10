@@ -1,0 +1,51 @@
+#{extends 'layout.html' /} #{set title:'Daftar Orang' /}
+
+<style>
+  #deskripsi {
+    text-align: justify;
+  }
+</style>
+
+<h1>${karya.judul}</h1>
+<h3>Author: ${karya.user.fullname}</h3>
+#{if karya.user.id == user.id}
+<a href="@{KaryaApplication.edit(karya.id)}">
+  <button type="button" class="btn btn-primary mb-2">Edit</button> </a
+><a href="@{KaryaApplication.create()}">
+  <button type="button" class="btn btn-primary mb-2">
+    Tambah Episode Baru
+  </button>
+</a>
+<a href="@{KaryaApplication.delete(karya.id)}">
+  <button type="button" class="btn btn-danger mb-2">
+   Hapus
+  </button>
+</a>
+#{/if}
+<p><b>Genre: ${karya.genre.genre}</b></p>
+<p id="deskripsi">${karya.deskripsi}</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Judul Episode</th>
+      <th scope="col">Tanggal Ditambahkan</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+    </tr>
+  </tbody>
+</table>

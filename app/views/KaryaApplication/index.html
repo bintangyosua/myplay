@@ -1,0 +1,33 @@
+#{extends 'layout.html' /} #{set title:'Daftar Orang' /}
+
+<style>
+  .card-container {
+    /* margin-right: 10px; */
+    row-gap: 10px;
+    column-gap: 10px;
+  }
+</style>
+
+<h1>Karya</h1>
+<a href="@{KaryaApplication.create()}">
+  <button type="button" class="btn btn-primary mb-2">Buat Karya Baru</button>
+</a>
+
+<div
+  class="card-container"
+  style="display: flex; padding: 2px; justify-content: start; flex-wrap: wrap">
+  #{list items:karyas, as:'karya'}
+  <div class="card" style="width: 18rem; height: 248px;">
+    <div class="card-body">
+      <h5 class="card-title">${karya.judul}</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Author: ${karya.user.fullname}</h6>
+      #{if karya.deskripsi.length() > 50}
+      %{ karya.deskripsi = karya.deskripsi.substring(0, 100) }%
+      #{/if}
+      <p class="card-text">${karya.deskripsi}</p>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Genre: ${karya.genre.genre}</h6>
+      <a href="@{KaryaApplication.show(karya.id)}" class="card-link">Baca</a>
+    </div>
+  </div>
+  #{/list}
+</div>
