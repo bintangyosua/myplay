@@ -9,6 +9,7 @@ import play.db.jpa.Model;
 public class Episode extends Model {
     public int no_eps;
     public String judul;
+    public String cerita;
 
     @ManyToOne
     public Karya karya;

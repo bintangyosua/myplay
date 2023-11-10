@@ -11,41 +11,104 @@
 #{if karya.user.id == user.id}
 <a href="@{KaryaApplication.edit(karya.id)}">
   <button type="button" class="btn btn-primary mb-2">Edit</button> </a
-><a href="@{KaryaApplication.create()}">
+><a href="@{EpisodeApplication.create(karya.id)}">
   <button type="button" class="btn btn-primary mb-2">
     Tambah Episode Baru
   </button>
 </a>
 <a href="@{KaryaApplication.delete(karya.id)}">
-  <button type="button" class="btn btn-danger mb-2">
-   Hapus
-  </button>
+  <button type="button" class="btn btn-danger mb-2">Hapus</button>
 </a>
 #{/if}
 <p><b>Genre: ${karya.genre.genre}</b></p>
 <p id="deskripsi">${karya.deskripsi}</p>
+<div id="output"></div>
+#{if episodes.size() > 0}
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Judul Episode</th>
-      <th scope="col">Tanggal Ditambahkan</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
+    #{list items:episodes, as:'episode'}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
+      <th scope="row">${episode.no_eps}</th>
+      <td>${episode.judul}</td>
+      <td>
+        <a href="@{EpisodeApplication.show(episode.id)}">
+          <button type="button" class="btn btn-info btn-sm">Baca</button>
+        </a>
+        #{if karya.user.id == user.id}
+        <a href="@{EpisodeApplication.edit(episode.id)}">
+          <button type="button" class="btn btn-warning btn-sm">Edit</button>
+        </a>
+        <a>
+          <button
+            type="button"
+            class="btn btn-danger btn-sm"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
+            Delete
+          </button>
+
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Modal title
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                </div>
+                <div class="modal-body">...</div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+                    Close
+                  </button>
+                  <a href="@{EpisodeApplication.delete(episode.id)}">
+                    <button type="button" class="btn btn-danger">Delete</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        #{/if}
+      </td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-    </tr>
+    #{/list}
   </tbody>
 </table>
+#{/if} #{else}
+<div class="alert alert-danger" role="alert">Tidak ada Episode!</div>
+#{/else}
+
+<script>
+  // Assuming you're using JavaScript to handle the form submission
+  var inputText = document.getElementById("deskripsi");
+  inputText.style.display = "none";
+
+  // Display the input text as paragraphs
+  var outputDiv = document.getElementById("output");
+  var paragraphs = inputText.innerHTML.split("\n");
+  paragraphs.forEach(function (paragraph) {
+    var p = document.createElement("p");
+    p.textContent = paragraph;
+    outputDiv.appendChild(p);
+  });
+</script>

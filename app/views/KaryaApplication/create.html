@@ -20,24 +20,24 @@
       placeholder="Leave a comment here"
       id="deskripsi"
       name="karya.deskripsi"
-      style="height: 100px"
+      style="height: 200px"
       required></textarea>
     <div id="emailHelp" class="form-text">Dilarang mengisi alamat palsu!</div>
   </div>
   <div class="mb-3">
     <label for="genre" class="form-label">Genre</label>
     <select
-            class="form-select"
-            aria-label="Default select example"
-            name="karya.genre.id"
-            id="genre"
-            required>
+      class="form-select"
+      aria-label="Default select example"
+      name="karya.genre.id"
+      id="genre"
+      required>
       #{list items:genres, as:'x'}
       <option value="${x.id}">${x.genre}</option>
       #{/list}
     </select>
     <div id="emailHelp" class="form-text">Pilih salah satu</div>
   </div>
-  <input type="hidden" name="karya.user.id" value="${user.id}"  />
+  <input type="hidden" name="karya.user.id" value="${user.id}" />
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

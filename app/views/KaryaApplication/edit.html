@@ -21,7 +21,7 @@
       placeholder="Leave a comment here"
       id="deskripsi"
       name="karya.deskripsi"
-      style="height: 100px"
+      style="height: 200px"
       value="${karya.deskripsi}"
       required>
 ${karya.deskripsi}</textarea
@@ -31,11 +31,11 @@ ${karya.deskripsi}</textarea
   <div class="mb-3">
     <label for="genre" class="form-label">Genre</label>
     <select
-            class="form-select"
-            aria-label="Default select example"
-            name="karya.genre.id"
-            id="genre"
-            required>
+      class="form-select"
+      aria-label="Default select example"
+      name="karya.genre.id"
+      id="genre"
+      required>
       #{list items:genres, as:'x'} #{if karya.genre.id == x.id}
       <option value="${x.id}" selected>${x.genre}</option>
       #{/if} #{else}
@@ -44,6 +44,6 @@ ${karya.deskripsi}</textarea
     </select>
     <div id="emailHelp" class="form-text">Pilih salah satu</div>
   </div>
-  <input type="hidden" name="karya.id" value="${karya.id}"  />
+  <input type="hidden" name="karya.id" value="${karya.id}" />
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
