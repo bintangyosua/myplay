@@ -33,7 +33,7 @@ public class Application extends Controller {
 
     public static void signedup(User user) {
         user.save();
-        OrangApplication.index();
+        KaryaApplication.index();
     }
 
 }

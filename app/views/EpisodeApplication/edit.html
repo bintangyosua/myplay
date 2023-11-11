@@ -1,6 +1,7 @@
-#{extends 'layout.html' /} #{set title:'Daftar Orang' /}
+#{extends 'layout.html' /} #{set title:'Edit Episode ' + episode.no_eps + ": " +
+episode.judul /}
 
-<h1>Edit Episode ${episode.id}: ${episode.judul}</h1>
+<h1>Edit Episode ${episode.no_eps}: ${episode.judul}</h1>
 <a href="@{KaryaApplication.show(karya.id)}">Kembali ke Karya</a>
 <form
   name="episode"

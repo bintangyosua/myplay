@@ -14,7 +14,7 @@ public class Episode extends Model {
     @Column(columnDefinition = "TEXT")
     public String cerita;
 
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.ALL)
     public Karya karya;
 
     public String toString() {
