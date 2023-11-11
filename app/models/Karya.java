@@ -1,5 +1,6 @@
 package models;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -13,10 +14,10 @@ public class Karya extends Model {
     @Column(columnDefinition = "TEXT")
     public String deskripsi;
 
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.ALL)
     public User user;
 
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.ALL)
     public Genre genre;
 
     public String toString() {
