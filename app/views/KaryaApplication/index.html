@@ -12,9 +12,10 @@
 <a href="@{KaryaApplication.create()}">
   <button type="button" class="btn btn-primary mb-2">Buat Karya Baru</button>
 </a>
+#{if karyas.size() > 0}
 <div
   class="card-container"
-  style="display: flex; padding: 2px; justify-content: start; flex-wrap: wrap">
+  style="display: flex; padding: 0; justify-content: start; flex-wrap: wrap">
   #{list items:karyas, as:'karya'}
   <div class="card" style="width: 18rem; height: 248px">
     <div
@@ -34,10 +35,20 @@
         </h6>
         #{if karya.deskripsi.length() > 100} %{ karya.deskripsi =
         karya.deskripsi.substring(0, 99) }% #{/if}
-        <p class="card-text">${karya.deskripsi}</p>
+        <p class="card-text" style="text-align: justify">${karya.deskripsi}</p>
       </div>
-      <a href="@{KaryaApplication.show(karya.id)}" class="card-link">Baca</a>
+      <a
+        href="@{KaryaApplication.show(karya.id)}"
+        class="card-link"
+        style="width: fit-content"
+        >Baca</a
+      >
     </div>
   </div>
   #{/list}
 </div>
+#{/if} #{else}
+<div class="alert alert-danger" role="alert">
+  Tidak ada Cerita yang bisa dibaca!
+</div>
+#{/else}

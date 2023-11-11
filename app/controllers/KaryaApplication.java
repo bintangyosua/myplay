@@ -50,6 +50,7 @@ public class KaryaApplication extends Controller {
     public static void delete(Long id) {
         Karya karya = Karya.findById(id);
         Middleware.checkKarya(Security.session.get("username"), karya);
+        Episode.delete("karya_id=?1", karya.id);
         karya.delete();
         index();
     }
