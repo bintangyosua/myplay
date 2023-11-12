@@ -1,9 +1,12 @@
 package models;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import play.db.jpa.Model;
 
@@ -14,10 +17,10 @@ public class Karya extends Model {
     @Column(columnDefinition = "TEXT")
     public String deskripsi;
 
-    @ManyToOne(cascade=CascadeType.ALL)
+    @ManyToOne
     public User user;
 
-    @ManyToOne(cascade=CascadeType.ALL)
+    @ManyToOne
     public Genre genre;
 
     public String toString() {

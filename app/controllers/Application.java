@@ -27,13 +27,31 @@ public class Application extends Controller {
 
     }
 
+    public static void home(String message) {
+        String username = Security.session.get("username");
+        User user = User.find("username=?1", username).first();
+
+        if (user == null) {
+            String name = "";
+            render(name);
+        } else {
+            String name = " " + user.fullname;
+            render(name, message);
+        }
+
+    }
+
     public static void signup() {
         render();
     }
 
+    public static void signup(boolean isSignedUp) {
+        render(isSignedUp);
+    }
+
     public static void signedup(User user) {
         user.save();
-        KaryaApplication.index();
+        signup(true);
     }
 
 }
