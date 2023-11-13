@@ -18,7 +18,7 @@ public class KaryaApplication extends Controller {
     }
 
     public static void create() {
-        if (!Security.isLoggedIn()) Application.signup();
+        if (!Security.isLoggedIn()) redirect("/login");;
         List<JPABase> genres = Genre.findAll();
         User user = User.find("username=?1", Security.connected()).first();
         render(genres, user);
@@ -49,6 +49,7 @@ public class KaryaApplication extends Controller {
 
     public static void delete(Long id) {
         Karya karya = Karya.findById(id);
+        System.out.println("karya_id: " + karya.id);
         Middleware.checkKarya(Security.session.get("username"), karya);
         Episode.delete("karya_id=?1", karya.id);
         karya.delete();
