@@ -7,6 +7,5 @@ public class Middleware {
         if (!profile.equals(karya.user.username)) {
             Application.home();
         }
-
     }
 }

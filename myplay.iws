@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3d05351-452a-4f78-9210-83dc2452da18" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/views/KaryaApplication/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/KaryaApplication/show.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myplay.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/myplay.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/KaryaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/KaryaApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Middleware.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Middleware.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myplay.iws" beforeDir="false" afterPath="$PROJECT_DIR$/myplay.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_KaryaApplication_show.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_KaryaApplication_show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/controllers.KaryaApplication" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/controllers.KaryaApplication" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/classes/controllers/KaryaApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/classes/controllers/KaryaApplication.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +38,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "orang__to__wattpad"
+    "git-widget-placeholder": "main"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
